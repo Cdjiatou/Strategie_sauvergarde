@@ -269,3 +269,85 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
 }
+
+
+/* ========================================
+   SERVICES SECTION
+   ======================================== */
+.services {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 60px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    background: var(--light-bg);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-color);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.service-card p {
+    color: var(--light-text);
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.service-card ul {
+    list-style: none;
+    text-align: left;
+}
+
+.service-card ul li {
+    padding: 8px 0;
+    color: var(--light-text);
+    position: relative;
+    padding-left: 25px;
+}
+
+.service-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
