@@ -58,3 +58,32 @@ function animateStats() {
         }, 16);
     });
 }
+
+
+// Animation d'apparition des cartes au scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '0';
+            entry.target.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                entry.target.style.transition = 'all 0.6s ease-out';
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, 100);
+            
+            cardObserver.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observer toutes les cartes
+document.querySelectorAll('.service-card, .testimonial-card').forEach(el => {
+    cardObserver.observe(el);
+});
